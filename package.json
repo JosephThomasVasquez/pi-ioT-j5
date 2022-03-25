@@ -1,7 +1,7 @@
 {
   "name": "pi-iot-j5",
   "version": "1.0.0",
-  "description": "",
+  "description": "Making pushes using new PAT (Personal Access Token):",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
