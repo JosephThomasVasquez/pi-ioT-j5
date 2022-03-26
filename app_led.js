@@ -21,7 +21,7 @@ board.on("ready", function () {
     if (count <= trafficLightSwitch.red) {
       redLed.on();
       //   yellowLed.off();
-      yellowLed.fadeOut();
+      yellowLed.fadeOut({ duration: 250 });
       console.log("tick", count);
     }
 
@@ -29,7 +29,7 @@ board.on("ready", function () {
     if (count <= trafficLightSwitch.green && count > trafficLightSwitch.red) {
       greenLed.on();
       //   redLed.off();
-      redLed.fadeOut();
+      redLed.fadeOut({ duration: 250 });
       console.log("tick", count);
     }
 
@@ -40,7 +40,7 @@ board.on("ready", function () {
     ) {
       yellowLed.on();
       //   greenLed.off();
-      greenLed.fadeOut();
+      greenLed.fadeOut({ duration: 250 });
       console.log("tick", count);
     }
 
