@@ -10,26 +10,29 @@ board.on("ready", function () {
   const yellowLed = new five.Led("P1-7");
   const greenLed = new five.Led("P1-11");
 
-  redLed.off();
-  yellowLed.off();
-  greenLed.off();
+  //   redLed.off();
+  //   yellowLed.off();
+  //   greenLed.off();
 
-  if (count === 1) {
-    console.log("count Red", count);
-    redLed.on();
+  redLed.on();
+
+  if (redLed.on()) {
+    console.log("Red");
+
     setTimeout(function () {
       redLed.off();
-      count++;
-      console.log("count Yellow", count);
+
+      console.log("Yellow");
       yellowLed.on();
       setTimeout(function () {
         yellowLed.off();
-        count++;
-        console.log("count Green", count);
+
+        console.log("Green");
         greenLed.on();
         setTimeout(function () {
           greenLed.off();
-          count = 1;
+
+          redLed.on();
         }, 10000);
       }, 2000);
     }, 10000);
