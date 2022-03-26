@@ -18,19 +18,17 @@ board.on("ready", function () {
     redLed.on();
     setTimeout(function () {
       redLed.off();
+      yellowLed.on();
+      setTimeout(function () {
+        yellowLed.off();
+        greenLed.on();
+        setTimeout(function () {
+          greenLed.off();
+          count = 1;
+        }, 10000);
+        count++;
+      }, 2000);
       count++;
-    }, 10000);
-
-    yellowLed.on();
-    setTimeout(function () {
-      yellowLed.off();
-      count++;
-    }, 2000);
-
-    greenLed.on();
-    setTimeout(function () {
-      greenLed.off();
-      count = 1;
     }, 10000);
   }
 });
