@@ -4,12 +4,12 @@ const raspio = require("raspi-io").RaspiIO;
 const board = new five.Board({ io: new raspio() });
 
 board.on("ready", function () {
-  let count = 0;
+  let count = 1;
 
   const trafficLightSwitch = {
     red: 10,
     green: 20,
-    yellow: 23,
+    yellow: 22,
   };
 
   const redLed = new five.Led("P1-12");
@@ -43,7 +43,7 @@ board.on("ready", function () {
 
     // Set count back to 1
     if (count > trafficLightSwitch.yellow) {
-      count = 0;
+      count = 1;
     } else {
       count++;
     }
