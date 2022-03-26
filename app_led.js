@@ -10,6 +10,10 @@ board.on("ready", function () {
   const yellowLed = new five.Led("P1-7");
   const greenLed = new five.Led("P1-11");
 
+  redLed.off();
+  yellowLed.off();
+  greenLed.off();
+
   if (count === 1) {
     redLed.on();
     setTimeout(function () {
