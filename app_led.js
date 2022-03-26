@@ -15,6 +15,7 @@ board.on("ready", function () {
 
   for (let i = 1; i < count; i++) {
     redLed.on();
+    console.log("tick", count);
     setTimeout(() => {
       redLed.off();
     }, 1000);
