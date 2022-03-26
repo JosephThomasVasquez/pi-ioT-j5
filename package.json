@@ -16,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/JosephThomasVasquez/pi-ioT-j5/issues"
   },
-  "homepage": "https://github.com/JosephThomasVasquez/pi-ioT-j5#readme"
+  "homepage": "https://github.com/JosephThomasVasquez/pi-ioT-j5#readme",
+  "dependencies": {
+    "johnny-five": "^2.1.0",
+    "raspi-io": "^11.0.0"
+  }
 }
