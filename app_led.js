@@ -39,6 +39,7 @@ board.on("ready", function () {
 
     // Set Yellow to On
     if (count <= trafficLightSwitch.yellow && count > trafficLightSwitch.red) {
+      count++;
       redLed.off();
       yellowLed.on();
       greenLed.off();
