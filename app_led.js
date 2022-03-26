@@ -4,7 +4,7 @@ const raspio = require("raspi-io").RaspiIO;
 const board = new five.Board({ io: new raspio() });
 
 board.on("ready", function () {
-  const count = 1;
+  let count = 1;
 
   const redLed = new five.Led("P1-12");
   const yellowLed = new five.Led("P1-7");
