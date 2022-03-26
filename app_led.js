@@ -8,8 +8,8 @@ board.on("ready", function () {
 
   const trafficLightSwitch = {
     red: 10,
-    yellow: 13,
-    green: 23,
+    green: 20,
+    yellow: 23,
   };
 
   const redLed = new five.Led("P1-12");
@@ -26,24 +26,24 @@ board.on("ready", function () {
       console.log("tick", count);
     }
 
-    // Set Yellow to On
-    if (count <= trafficLightSwitch.yellow && count > trafficLightSwitch.red) {
-      count++;
-      redLed.off();
-      yellowLed.on();
-      greenLed.off();
-      console.log("tick", count);
-    }
-
     // Set Green to On
-    if (
-      count <= trafficLightSwitch.green &&
-      count > trafficLightSwitch.yellow
-    ) {
+    if (count <= trafficLightSwitch.green && count > trafficLightSwitch.red) {
       count++;
       redLed.off();
       yellowLed.off();
       greenLed.on();
+      console.log("tick", count);
+    }
+
+    // Set Yellow to On
+    if (
+      count <= trafficLightSwitch.yellow &&
+      count > trafficLightSwitch.green
+    ) {
+      count++;
+      redLed.off();
+      yellowLed.on();
+      greenLed.off();
       console.log("tick", count);
     }
 
