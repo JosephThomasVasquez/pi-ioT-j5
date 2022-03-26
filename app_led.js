@@ -6,7 +6,7 @@ const board = new five.Board({ io: new raspio() });
 board.on("ready", function () {
   let count = 1;
 
-  const redLed = new five.Led("P1-11");
+  const redLed = new five.Led("P1-12");
   const yellowLed = new five.Led("P1-7");
   const greenLed = new five.Led("P1-11");
 
