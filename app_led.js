@@ -15,20 +15,23 @@ board.on("ready", function () {
   greenLed.off();
 
   if (count === 1) {
+    console.log("count Red", count);
     redLed.on();
     setTimeout(function () {
       redLed.off();
+      count++;
+      console.log("count Yellow", count);
       yellowLed.on();
       setTimeout(function () {
         yellowLed.off();
+        count++;
+        console.log("count Green", count);
         greenLed.on();
         setTimeout(function () {
           greenLed.off();
           count = 1;
         }, 10000);
-        count++;
       }, 2000);
-      count++;
     }, 10000);
   }
 });
