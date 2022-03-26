@@ -4,37 +4,43 @@ const raspio = require("raspi-io").RaspiIO;
 const board = new five.Board({ io: new raspio() });
 
 board.on("ready", function () {
-  let count = 1;
+  let count = 10;
 
   const redLed = new five.Led("P1-12");
   const yellowLed = new five.Led("P1-7");
   const greenLed = new five.Led("P1-11");
-
-  //   redLed.off();
-  //   yellowLed.off();
-  //   greenLed.off();
+  //   five; //   greenLed.off(); //   yellowLed.off(); //   redLed.off();
 
   redLed.on();
 
-  if (redLed.on()) {
-    console.log("Red");
-
-    setTimeout(function () {
+  for (let i = 1; i < count; i++) {
+    redLed.on();
+    setTimeout(() => {
       redLed.off();
-
-      console.log("Yellow");
-      yellowLed.on();
-      setTimeout(function () {
-        yellowLed.off();
-
-        console.log("Green");
-        greenLed.on();
-        setTimeout(function () {
-          greenLed.off();
-
-          redLed.on();
-        }, 10000);
-      }, 2000);
-    }, 10000);
+    }, 1000);
   }
+
+  //   if (redLed.on()) {
+  //     console.log("Red");
+
+  //     setTimeout(function () {
+  //       redLed.off();
+
+  //       console.log("Yellow");
+  //       yellowLed.on();
+  //       setTimeout(function () {
+  //         yellowLed.off();
+
+  //         console.log("Green");
+  //         greenLed.on();
+  //         setTimeout(function () {
+  //           greenLed.off();
+
+  //           redLed.on();
+  //         }, 10000);
+  //       }, 2000);
+  //     }, 10000);
+  //   }
 });
+
+const switchLights = () => {};
