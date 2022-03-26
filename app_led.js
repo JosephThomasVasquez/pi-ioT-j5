@@ -8,8 +8,8 @@ board.on("ready", function () {
 
   const trafficLightSwitch = {
     red: 10,
-    yellow: 12,
-    green: 22,
+    yellow: 13,
+    green: 23,
   };
 
   const redLed = new five.Led("P1-12");
