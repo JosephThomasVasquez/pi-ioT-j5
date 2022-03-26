@@ -1,5 +1,5 @@
 const five = require("johnny-five");
-const raspio = require("raspi-io").Raspio();
+const raspio = require("raspi-io").RaspiIO();
 
 const board = new five.Board({ io: new raspio() });
 
