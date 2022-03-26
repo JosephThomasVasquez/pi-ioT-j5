@@ -19,19 +19,15 @@ board.on("ready", function () {
   setInterval(() => {
     // Set Red to On
     if (count <= trafficLightSwitch.red) {
-      count++;
       redLed.on();
       yellowLed.off();
-      greenLed.off();
       console.log("tick", count);
     }
 
     // Set Green to On
     if (count <= trafficLightSwitch.green && count > trafficLightSwitch.red) {
-      count++;
-      redLed.off();
-      yellowLed.off();
       greenLed.on();
+      redLed.off();
       console.log("tick", count);
     }
 
@@ -40,16 +36,16 @@ board.on("ready", function () {
       count <= trafficLightSwitch.yellow &&
       count > trafficLightSwitch.green
     ) {
-      count++;
-      redLed.off();
       yellowLed.on();
       greenLed.off();
       console.log("tick", count);
     }
 
     // Set count back to 1
-    if (count > trafficLightSwitch.green) {
+    if (count > trafficLightSwitch.yellow) {
       count = 0;
+    } else {
+      count++;
     }
   }, 1000);
 });
